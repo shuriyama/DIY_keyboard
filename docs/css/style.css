@@ -2,5 +2,5 @@ h1 {
     padding: 0.5em;/*文字周りの余白*/
     color: #494949;/*文字色*/
     background: #a3e1fa;/*背景色*/
-    border-left: solid 5px #2256e6;/*左線（実線 太さ 色）*/
+    border-left: solid 8px #2256e6;/*左線（実線 太さ 色）*/
   }
