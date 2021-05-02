@@ -9,14 +9,19 @@
     <article>
         <h1>Step0 内容物の確認</h1>
         <p>この度はキーボード自作キットをご購入いただきありがとうございます。<br>はじめに下記リストの部品が不足なく入っているか確認をお願いします。不足している場合は製作者までご連絡をお願いします。</p>
-        <table id="table3315" border="1"><tr bgcolor="#d6f3ff"><td>品目</td><td>仕様</td><td>個数</td></tr><tr><td>実装基板</td><td>オリジナル</td><td>1p</td></tr><tr><td>マイコン基板</td><td>Pro Micro互換</td><td>1p</td></tr><tr><td>リセットスイッチ</td><td>小型スイッチ</td><td>1p</td></tr><tr><td>ダイオード</td><td>1N4148</td><td>10p</td></tr><tr><td>キースイッチ</td><td>Gateron 白軸</td><td>10p</td></tr><tr><td>キーキャップ</td><td>PBT素材 白/黒</td><td>計10p</td></tr><tr><td>滑り止め</td><td>ｼﾘｺｰﾝｺﾞﾑ黒色</td><td>4p</td></tr></table><style type="text/css"><!-- #table3315{text-align:left;border:solid 1px #808080;border-collapse:collapse}#table3315>tbody>tr>td{border:solid 1px #808080;padding:4px;min-width:60px} --></style>
+        <table id="table3315" border="1"><tr bgcolor="#d6f3ff"><td>品目</td><td>仕様</td><td>個数</td></tr><tr><td>実装基板</td><td>オリジナル</td><td>1p</td></tr><tr><td>マイコン基板</td><td>Pro Micro互換</td><td>1p</td></tr><tr><td>リセットスイッチ</td><td>小型スイッチ</td><td>1p</td></tr><tr><td>ダイオード</td><td>1N4148</td><td>11p</td></tr><tr><td>キースイッチ</td><td>Gateron 白軸</td><td>11p</td></tr><tr><td>キーキャップ</td><td>PBT素材 白/黒</td><td>計11p</td></tr><tr><td>滑り止め</td><td>ｼﾘｺｰﾝｺﾞﾑ黒色</td><td>4p</td></tr></table><style type="text/css"><!-- #table3315{text-align:left;border:solid 1px #808080;border-collapse:collapse}#table3315>tbody>tr>td{border:solid 1px #808080;padding:4px;min-width:60px} --></style>
         <p><br></p>
         <h1>Step1 Pro Micro基板のもげ対策</h1>
-        <p>一般的に言われるUSBコネクタのもげ対策を推奨します。<br>100円ショップで売られている2液混合タイプのエポキシ接着剤でをコネクタ周辺に盛って硬化するまで待ちましょう。</p>
+        <p>一般的に言われるUSBコネクタのもげ対策を推奨します。<br>100円ショップで売られている2液混合タイプのエポキシ接着剤でをコネクタ周辺に盛って硬化するまで待ちましょう。チップ抵抗やチップコンデンサ等の部品を覆っても大丈夫ですが、USBコネクタ内部に侵入したり、電極に被さったりしないように注意してください。</p>
         <p><br></p>
         <h1>Step2 Pro Microプログラム書き込み</h1>
-        <p>接着剤の硬化が表面が固まるぐらいまで進んだら、Pro Microに制御ソフトを書き込んで動作テストをします。<br>Pro Microを一度実装基板に半田付けすると取り外しが大変になるため、ここでPro Microに初期不良がないことを確認して安心しておきましょう。<br>PCにQMK Toolboxをインストールするか、Chromeブラウザ上で行う２パターンがあるのですが、今回はよりシンプルな後者の方法を解説します。</p>
-        <p>① 本自作キット向けの制御ソフト(hexファイル)を下記URLからダウンロードして一度ローカルの任意のディレクトリに保存する。<br>② のぎすけ屋さんが作製されたChrome上書き込みツールのサイト https://sekigon-gonnoc.github.io/promicro-web-updater/index.html にアクセスする。<br>③ファイルを選択からダウンロード済みのhexファイルを指定して、「flash」ボタンを押す。<br>④Pro MicroのRSTとGNDをピンセットでショートさせることで、内部ソフトの書き換え可能なモードにする。手頃な金属がなければ、ダイオードの足を2cm程カットして曲げても良いし、アルミホイルをちぎってもOK<br>⑤ シリアルポートへの接続要求画面に、④の操作によって現れるデバイスを選択して接続ボタンを押す<br>⑥ しばらく待ってVerify OKと表示されたら完了</p>
+        <p>接着剤の硬化が表面が固まるぐらいまで進んだら、Pro Microに制御ソフトを書き込んで動作テストをします。<br>Pro Microを一度実装基板に半田付けすると取り外しが大変になるため、ここでPro Microに初期不良がないことを確認して安心しておきましょう。<br>QMK Toolboxをインストールするか、Chromeブラウザ上で行う２パターンがあるのですが、今回はよりシンプルな後者の方法を解説します。</p>
+        <p>① 本自作キット向けの制御ソフト(hexファイル)を下記URLからダウンロードして一度ローカルの任意のディレクトリに保存する。<br>② のぎすけ屋さんが作製されたChrome上書き込みツールのサイト https://sekigon-gonnoc.github.io/promicro-web-updater/index.html にアクセスする。<br>③ファイルを選択からダウンロード済みのhexファイルを指定して、「flash」ボタンを押す。<br>④Pro MicroのRSTとGNDをピンセットでショートさせることで、内部ソフトの書き換え可能なモードにする。<br>手頃な金属がなければ、ダイオードの足を2cm程カットして曲げても良いし、アルミホイルをちぎってもOK<br>⑤ シリアルポートへの接続要求画面に、④の操作によって現れるデバイスを選択して接続ボタンを押す<br>⑥ しばらく待ってVerify OKと表示されたら完了</p>
+        <p>初期設定ではキー機能に0～9の数字を割り振っています。画像のようにピンをショートさせてみて、メモ帳などに数字が入力されれば無事にPro Microに制御ソフトの書き込み成功が確認できます。</p>
+        <h1>Step3 ダイオードの実装</h1>
+        <p>実装基板のD1~D11と印刷された10箇所にダイオードを半田付けします。基板のダイオード取り付けは裏面（他の部品と違う面）に入っています。基板のダイオードの黒帯が印刷の白ラインと同じ向きになるように取り付けてください。</p>
+        <h1>Step4 Pro Micro基板とリセットスイッチの実装</h1>
+        <p>ピンヘッダ―を介してPro Micro基板を実装基板上に取り付けます。ピンヘッダ―の脚が短い方を実装基板の表面から押し込んで裏面側から半田付けします。ピンヘッダ―の上にPro Micro基板を</p>
 
 
 
