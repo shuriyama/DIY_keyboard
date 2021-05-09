@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>ビルドガイド</title>
+   <style>
+        h1 {
+            padding: 0.5em;/*文字周りの余白*/
+            color: #383737;/*文字色*/
+            background: #bbe7f8;/*背景色*/
+            border-left: solid 8px #2256e6;/*左線（実線 太さ 色）*/
+        }
+   </style>
+</head>
+<body>
+    <article>
+        <h1>Step0 内容物の確認</h1>
+        <p>この度はキーボード自作キットをご購入いただきありがとうございます。<br>はじめに下記リストの部品が不足なく入っているか確認をお願いします。不足している場合は製作者までご連絡をお願いします。</p>
+        <table id="table3315" border="1"><tr bgcolor="#bbe7f8"><td>品目</td><td>仕様</td><td>個数</td></tr><tr><td>実装基板</td><td>オリジナル</td><td>1p</td></tr><tr><td>マイコン基板</td><td>Pro Micro互換</td><td>1p</td></tr><tr><td>リセットスイッチ</td><td>小型スイッチ</td><td>1p</td></tr><tr><td>ダイオード</td><td>1N4148</td><td>11p</td></tr><tr><td>キースイッチ</td><td>Gateron 白軸</td><td>11p</td></tr><tr><td>キーキャップ</td><td>PBT素材 白/黒</td><td>計11p</td></tr><tr><td>滑り止め</td><td>ｼﾘｺｰﾝｺﾞﾑ黒色</td><td>4p</td></tr></table><style type="text/css"><!-- #table3315{text-align:left;border:solid 1px #808080;border-collapse:collapse}#table3315>tbody>tr>td{border:solid 1px #808080;padding:4px;min-width:60px} --></style>
+        <br>
+        <img src="picture/0-1.jpg" width="40%" height="40%">
+        <br>
+        <h1>Step1 Pro Micro基板のもげ対策</h1>
+        <p>一般的に言われるUSBコネクタのもげ対策を推奨します。<br>100円ショップで売られている2液混合タイプのエポキシ接着剤でをコネクタ周辺に盛って硬化するまで待ちましょう。<br>チップ抵抗やチップコンデンサ等の部品を覆っても大丈夫ですが、USBコネクタ内部に侵入したり、電極に被さったりしないように注意してください。</p>
+        <br>
+        <img src="picture/1-1.jpg" width="30%" height="30%">
+        <img src="picture/1-2.jpg" width="30%" height="30%">
+        <img src="picture/1-3.jpg" width="30%" height="30%">
+
+
+        <h1>Step2 Pro Microプログラム書き込み</h1>
+        <p>接着剤の硬化が表面が固まるぐらいまで進んだら、Pro Microに制御ソフトを書き込んで動作テストをします。<br>Pro Microを一度実装基板に半田付けすると取り外しが大変になるため、ここでPro Microに初期不良がないことを確認して安心しておきましょう。<br>QMK Toolboxをインストールするか、Chromeブラウザ上で行う２パターンがあるのですが、今回はよりシンプルな後者の方法を解説します。</p>
+        <p>① 本自作キット向けの制御ソフト(hexファイル)を下記URLからダウンロードして一度ローカルの任意のディレクトリに保存する。<br>② のぎすけ屋さんが作製されたChrome上書き込みツールのサイト https://sekigon-gonnoc.github.io/promicro-web-updater/index.html にアクセスする。<br>③ファイルを選択からダウンロード済みのhexファイルを指定して、「flash」ボタンを押す。<br>④Pro MicroのRSTとGNDをピンセットでショートさせることで、内部ソフトの書き換え可能なモードにする。<br>手頃な金属がなければ、ダイオードの足を2cm程カットして曲げても良いし、アルミホイルをちぎってもOK<br>⑤ シリアルポートへの接続要求画面に、④の操作によって現れるデバイスを選択して接続ボタンを押す<br>⑥ しばらく待ってVerify OKと表示されたら完了</p>
+        <p>初期設定ではキー機能に0～9の数字を割り振っています。画像のようにピンをショートさせてみて、メモ帳などに数字が入力されれば無事にPro Microに制御ソフトの書き込み成功が確認できます。</p>
+        <br>
+        <h1>Step3 ダイオードの実装</h1>
+        <p>実装基板の11箇所(D1~D11の印刷)にダイオードを半田付けします。<br>基板の裏面にダイオードを取り付けますので、他の部品と違う面に印刷が入っています。<br>ダイオードの黒帯が印刷の白ラインと同じ向きになるように取り付けてください。<br>リセットスイッチも半田付けしてください。</p>
+
+        <img src="picture/3-0.jpg" width="50%" height="50%">
+        <br>
+        <img src="picture/3-1.jpg" width="30%" height="30%">
+        <img src="picture/3-2.jpg" width="30%" height="30%">
+        <br>
+        <img src="picture/3-3.jpg" width="30%" height="30%">
+        <img src="picture/3-4.jpg" width="30%" height="30%">
+
+
+        <h1>Step4 Pro Micro基板の実装</h1>
+        <p>ピンヘッダ―を介してPro Micro基板を実装基板上に取り付けます。</p>
+        <p>①ピンヘッダ―の脚が短い方を実装基板の表面から押し込んで裏面側から半田付けします。<br>②ピンヘッダ―の上にPro Micro基板を載せて上側から全てのピンを半田付けします。</p>
+        <br>
+
+        <img src="picture/4-1.jpg" width="30%" height="30%">
+        <img src="picture/4-2.jpg" width="30%" height="30%">
+        <img src="picture/4-3.jpg" width="30%" height="30%">
+
+
+        <h1>Step5 キースイッチの実装</h1>
+        <p>キースイッチ11個全てを実装基板のS1~S11に押し込みます。まだ半田付けはしないでください。<br>電極脚2本が基板に刺さる向きに合わせてください。もし電極脚が折れてしまったら、曲げ直して基板に刺さるように修正してください。<br>半田付けをしない状態でキースイッチにキーキャップを押し込んでください。奥まで入るようにしっかりと力をかけてください。<br>白黒とのキーキャップが合計11p同梱されていますので、お好みの位置に取り付けてください。<br>キースイッチがしっかりと実装基板の奥まで入っていて斜めになっていないことを確認して、裏面から半田付けしてください。</p>
+        <img src="picture/5-0.jpg" width="30%" height="30%">        <img src="picture/5-1.jpg" width="30%" height="30%">
+        <br>
+        <img src="picture/5-2.jpg" width="30%" height="30%">
+        <img src="picture/5-3.jpg" width="30%" height="30%">
+        <br>
+        <img src="picture/5-4.jpg" width="30%" height="30%">
+
+        <h1>Step6 キー機能のカスタマイズ</h1>
+        <p>裏面に滑り止めのシリコーンゴムを貼付けて本体の完成です。PCに接続して全てのキーが反応する(数字が入力される)ことを確認しておきましょう。<br>問題がなけれキー機能のカスタマイズに進みましょう。<br>① githubからキー設定ファイル(jsonファイル)をダウンロードしてローカルに保存する<br>② Chromeブラウザから https://remap-keys.app/ にアクセスする<br>③ 青色のSTART REMAP FOR YOUR KEYBOARDボタンを押す ④ +キーボードをクリックして、HIDの接続を許可する <br>⑤ jsonファイルをドラッグして読み込ませる <br>⑥ 画面下部から好きな機能をドラッグし、上部の画像の配置先キー上でドロップ。<br>⑦ 満足いくキー設定ができたらFlashボタンを押す</p>
+        <p>これでキー機能のカスタマイズは完了です。</p>
+    </article>
+</body>
+</html>
